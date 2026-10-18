@@ -9,15 +9,8 @@
 
 > **Devnet only.** moor trades on **Solana devnet** with test tokens: nothing you hold or trade here has real value.
 
-Every trade is built by the Moor SDK, simulated before it is signed, and shown with its bounds and fees before you
+Every trade is simulated before it is signed, and shown with its bounds and fees before you
 confirm it. Every command can print one JSON envelope for scripts (`--json`).
-
-| Repository | Role |
-| :--- | :--- |
-| [`moor-program`](https://github.com/moor-protocol/moor-program) | core contracts, math and the TypeScript SDK |
-| [`moor-android`](https://github.com/moor-protocol/moor-android) | the Android app |
-| [`moor-frontend`](https://github.com/moor-protocol/moor-frontend) | the web app ([app.moor.fund](https://app.moor.fund)) |
-| [`whitepaper`](https://github.com/moor-protocol/whitepaper) | the maths: NAV invariance, sizing |
 
 ## Install
 
