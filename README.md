@@ -20,8 +20,12 @@ $ curl -fsSL https://github.com/moor-protocol/moor-cli-releases/releases/latest/
 
 The installer picks your platform, downloads the archive, checks it against the release's `SHA256SUMS` and puts `moor`
 in `~/.local/bin` (it says so when that folder is not on your `PATH`). It needs no administrator rights and never
-touches anything else. `MOOR_INSTALL_DIR=<dir>` installs elsewhere; `MOOR_VERSION=0.1.0` installs that version. Run the
-same line again to update.
+touches anything else. `MOOR_INSTALL_DIR=<dir>` installs elsewhere; `MOOR_VERSION=0.1.0` installs that version.
+
+**Updating.** `moor update` replaces `moor` with the latest release, checked against its `SHA256SUMS` the same way;
+`moor update --check` only says whether there is one. It never installs an older version, and a failed update leaves
+the installed one untouched. Running the install line again also updates (moor 0.1.0 has no `moor update`, so update
+from it that way once).
 
 | Platform | Archive |
 |---|---|
@@ -37,9 +41,9 @@ supported yet.
 page, check it, unpack it and move `moor` onto your `PATH`:
 
 ```console
-$ grep moor-0.1.0-darwin-arm64.tar.gz SHA256SUMS | shasum -a 256 -c -     # macOS
-$ grep moor-0.1.0-linux-x64.tar.gz SHA256SUMS | sha256sum -c -            # Linux
-$ tar -xzf moor-0.1.0-darwin-arm64.tar.gz && ./moor-0.1.0-darwin-arm64/moor --version
+$ grep moor-0.1.1-darwin-arm64.tar.gz SHA256SUMS | shasum -a 256 -c -     # macOS
+$ grep moor-0.1.1-linux-x64.tar.gz SHA256SUMS | sha256sum -c -            # Linux
+$ tar -xzf moor-0.1.1-darwin-arm64.tar.gz && ./moor-0.1.1-darwin-arm64/moor --version
 ```
 
 The binaries are not codesigned yet. On macOS, an archive downloaded with a browser is quarantined and `moor` will not
@@ -74,6 +78,7 @@ its ticker (`moSOL3`, any case) or its address; a typo gets "did you mean …?".
 | `moor funds` | `ls` and `show`: prices, leverage and fees; `nav`, `rebalances`, `health` from the API |
 | `moor faucet` | a devnet grant: 1,000 USDC, plus 0.03 SOL when the wallet has almost none |
 | `moor autosign` | `on` or `off`: trades sign without asking (the summary and safety checks stay) |
+| `moor update` | install the latest release of moor; `--check` only says whether there is one |
 
 Global flags: `--json`, `-y, --yes`, `-v, --verbose`, `-q, --quiet`, `-k, --keypair <path>` (another wallet file for one
 command), `--no-color`, `--version`, `-h, --help`.
