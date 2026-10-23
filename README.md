@@ -41,9 +41,9 @@ supported yet.
 page, check it, unpack it and move `moor` onto your `PATH`:
 
 ```console
-$ grep moor-0.1.1-darwin-arm64.tar.gz SHA256SUMS | shasum -a 256 -c -     # macOS
-$ grep moor-0.1.1-linux-x64.tar.gz SHA256SUMS | sha256sum -c -            # Linux
-$ tar -xzf moor-0.1.1-darwin-arm64.tar.gz && ./moor-0.1.1-darwin-arm64/moor --version
+$ grep moor-0.1.2-darwin-arm64.tar.gz SHA256SUMS | shasum -a 256 -c -     # macOS
+$ grep moor-0.1.2-linux-x64.tar.gz SHA256SUMS | sha256sum -c -            # Linux
+$ tar -xzf moor-0.1.2-darwin-arm64.tar.gz && ./moor-0.1.2-darwin-arm64/moor --version
 ```
 
 The binaries are not codesigned yet. On macOS, an archive downloaded with a browser is quarantined and `moor` will not
